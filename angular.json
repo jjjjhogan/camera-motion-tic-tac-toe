@@ -25,7 +25,8 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/resources/*"
             ],
             "styles": [
               "src/styles.css"
@@ -103,5 +104,8 @@
       }
     }
   },
-  "defaultProject": "at-alternative-interaction-solution"
+  "defaultProject": "at-alternative-interaction-solution",
+  "cli": {
+    "analytics": "48ea239b-3b4c-4961-8397-2f29c5c2e6e8"
+  }
 }

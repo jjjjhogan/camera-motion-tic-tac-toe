@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { UiComponent } from './ui/ui.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HandtrackerComponent } from './handtracker/handtracker.component';
+import { TictactoeBoardComponent } from './tictactoe-board/tictactoe-board.component';
+import { TictactoeSquareComponent } from './tictactoe-square/tictactoe-square.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UiComponent,
     HomePageComponent,
-    HandtrackerComponent
+    HandtrackerComponent,
+    TictactoeBoardComponent,
+    TictactoeSquareComponent
   ],
   imports: [
     BrowserModule,

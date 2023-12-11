@@ -1,4 +1,4 @@
---Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
+--Readme document for *John Hogan*, *jjhogan@uci.edu*, *18473634*--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
@@ -15,7 +15,7 @@
 
 
 3. What online resources did you consult when completing this assignment? (list specific URLs)
-
+https://www.w3schools.com/howto/howto_css_image_text.asp
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
