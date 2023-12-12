@@ -9,6 +9,8 @@ import { HandtrackerComponent } from './handtracker/handtracker.component';
 import { TictactoeBoardComponent } from './tictactoe-board/tictactoe-board.component';
 import { TictactoeSquareComponent } from './tictactoe-square/tictactoe-square.component';
 import { WinnerPanelComponent } from './winner-panel/winner-panel.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { WinnerPanelComponent } from './winner-panel/winner-panel.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

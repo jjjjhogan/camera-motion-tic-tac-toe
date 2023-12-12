@@ -1,1 +1,4 @@
-<p>winner-panel works!</p>
+
+<div *ngIf winnerData>
+<h2 *ngFor="let data of winnerData">{{data.winner}} beat {{data.getLoser()}}!</h2>
+</div>

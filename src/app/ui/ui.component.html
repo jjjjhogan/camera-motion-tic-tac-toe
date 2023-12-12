@@ -1,10 +1,13 @@
 
 <app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
 
+<div [innerHTML]="gesture"></div>
+
 
 
 
 
 <app-tictactoe-board></app-tictactoe-board>
 
-<div [innerHTML]="gesture"></div>
+
+<app-winner-panel></app-winner-panel>

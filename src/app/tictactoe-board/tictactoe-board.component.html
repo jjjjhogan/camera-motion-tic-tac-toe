@@ -1,3 +1,13 @@
+<form [formGroup]="applyForm" (submit)="submitNames()">
+    <label for="x-name">X player name</label>
+    <input id="x-name" type="text" formControlName="xName">
+
+    <label for="o-name">O player name</label>
+    <input id="o-name" type="text" formControlName="oName">
+
+    <button type="submit" class="primary">Submit</button>
+  </form>
+
 <table>
     <tr>
         <td>
@@ -37,8 +47,8 @@
 
 </table>
 
-<button (click)="select('d')">down</button>
-<button (click)="select('u')">up</button>
-<button (click)="select('l')">left</button>
-<button (click)="select('r')">right</button>
+
+<div *ngIf="winnerData">
+    <h2 *ngFor="let data of winnerData">{{data.winner}} beat {{data.getLoser()}}!</h2>
+</div>
 

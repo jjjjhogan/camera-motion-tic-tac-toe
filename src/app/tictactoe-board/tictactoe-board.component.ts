@@ -1,4 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
+import { WinnerDataService } from '../winner-data.service';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { kMaxLength } from 'buffer';
+import { GameData } from '../game-data';
 
 @Component({
   selector: 'app-tictactoe-board',
@@ -6,14 +10,23 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./tictactoe-board.component.css']
 })
 export class TictactoeBoardComponent implements OnInit {
+  winnerData:GameData[];
   onInitialized = new EventEmitter<TictactoeBoardComponent>();
   boardState: string[];
   xIsNextPiece = true;
   selectedSquare:boolean[];
   isWin = false;
+  isPaused = false;
+  winner:string;
+  xname:string;
+  oname:string;
 
+  applyForm = new FormGroup({
+    xName: new FormControl(''),
+    oName: new FormControl('')
+  });
 
-  constructor(){
+  constructor(public data: WinnerDataService){
     this.boardState = ['','','','','','','','',''];
     this.selectedSquare = [true,false,false,false,false,false,false,false,false];
   }
@@ -22,16 +35,24 @@ export class TictactoeBoardComponent implements OnInit {
 
   }
 
-  addState(i: number, value:string){
-    this.boardState[i]=value;
+  submitNames(){
+    this.xname = this.applyForm.value.xName!;
+    this.oname = this.applyForm.value.oName!;
 
   }
+
+  submitWinner(){
+    console.log(this.oname,this.xname,this.winner);
+    this.data.addWinner(this.xname,this.oname,this.winner);
+    this.winnerData = this.data.getWinner();
+  }
+
 
   parseCommand(gesture:string){
     if(gesture == "Open Hand"){
       this.select('r');
     }
-    else if(gesture == "Two Open Hands"){
+    else if(gesture == "Two Open Hands"){ 
       this.select('l');
     }
     else if(gesture == "Closed Hand"){
@@ -41,16 +62,23 @@ export class TictactoeBoardComponent implements OnInit {
       this.select('d');
     }
     else if(gesture == "Hand Pointing"){
-      this.placePiece();
+      this.isPaused = true;
     }
-    else if(gesture == "Two Hands Pinching"){
+    else if(gesture == "Two Hands Pointing"){
+      this.isPaused= false;
+    }
+    else if(gesture == "Open Hand and Closed Hand"){
       this.boardState = ['','','','','','','','',''];
       this.isWin=false;
+      this.xIsNextPiece = true;
+    }
+    else if(gesture == "Pointing Hand and Closed Hand"){
+      this.placePiece();
     }
   }
 
   select(direction:string){
-    if(this.isWin){
+    if(this.isWin || this.isPaused){
       return;
     }
     let selected = this.selectedSquare.indexOf(true);
@@ -114,10 +142,16 @@ export class TictactoeBoardComponent implements OnInit {
 
     let winner = this.checkWinner();
     if(winner){
-      console.log('winner: ' + winner );
-      this.isWin = true;
-    }
+      if(winner == 'x'){
+        this.winner = this.xname;
+      }
+      else{
+        this.winner = this.oname;
+      }
+    this.submitWinner();
 
+
+    }
   }
 
   
