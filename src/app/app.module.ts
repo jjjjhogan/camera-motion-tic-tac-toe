@@ -8,6 +8,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { HandtrackerComponent } from './handtracker/handtracker.component';
 import { TictactoeBoardComponent } from './tictactoe-board/tictactoe-board.component';
 import { TictactoeSquareComponent } from './tictactoe-square/tictactoe-square.component';
+import { WinnerPanelComponent } from './winner-panel/winner-panel.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TictactoeSquareComponent } from './tictactoe-square/tictactoe-square.co
     HomePageComponent,
     HandtrackerComponent,
     TictactoeBoardComponent,
-    TictactoeSquareComponent
+    TictactoeSquareComponent,
+    WinnerPanelComponent
   ],
   imports: [
     BrowserModule,

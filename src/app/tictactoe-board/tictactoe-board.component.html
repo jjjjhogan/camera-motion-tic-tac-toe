@@ -1,1 +1,44 @@
-<p>tictactoe-board works!</p>
+<table>
+    <tr>
+        <td>
+         <app-tictactoe-square [(selected)]="selectedSquare[0]" [(state)]="boardState[0]"></app-tictactoe-square>
+        </td> 
+        <td>
+         <app-tictactoe-square [(selected)]="selectedSquare[1]" [(state)]="boardState[1]"></app-tictactoe-square>
+        </td>
+        <td>
+         <app-tictactoe-square  [(selected)]="selectedSquare[2]" [(state)]="boardState[2]"></app-tictactoe-square>
+        </td>
+     </tr>
+
+    <tr>
+        <td>
+         <app-tictactoe-square  [(selected)]="selectedSquare[3]" [(state)]="boardState[3]"></app-tictactoe-square>
+        </td> 
+        <td>
+         <app-tictactoe-square  [(selected)]="selectedSquare[4]" [(state)]="boardState[4]"></app-tictactoe-square>
+        </td>
+        <td>
+         <app-tictactoe-square  [(selected)]="selectedSquare[5]" [(state)]="boardState[5]"></app-tictactoe-square>
+        </td>
+     </tr>
+
+    <tr>
+       <td>
+        <app-tictactoe-square  [(selected)]="selectedSquare[6]" [(state)]="boardState[6]"></app-tictactoe-square>
+       </td> 
+       <td>
+        <app-tictactoe-square  [(selected)]="selectedSquare[7]" [(state)]="boardState[7]"></app-tictactoe-square>
+       </td>
+       <td>
+        <app-tictactoe-square  [(selected)]="selectedSquare[8]" [(state)]="boardState[8]"></app-tictactoe-square>
+       </td>
+    </tr>
+
+</table>
+
+<button (click)="select('d')">down</button>
+<button (click)="select('u')">up</button>
+<button (click)="select('l')">left</button>
+<button (click)="select('r')">right</button>
+

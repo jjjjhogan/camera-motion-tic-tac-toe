@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tictactoe-square',
@@ -6,13 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tictactoe-square.component.css']
 })
 export class TictactoeSquareComponent implements OnInit {
-  selectedPiece: string;
+  @Input() selected: boolean;
+  @Output() selectedChange = new EventEmitter<boolean>();
+  @Input() state: string;
+  @Output() stateChange = new EventEmitter<string>();
+
 
 
   constructor(){
-    this.selectedPiece = '( )';
   }
   ngOnInit(): void {
+    console.log(this.state);
     
   }
+
 }

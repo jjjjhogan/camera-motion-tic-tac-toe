@@ -1,39 +1,10 @@
-<table>
-    <tr>
-        <td>
-         <app-tictactoe-square></app-tictactoe-square>
-        </td> 
-        <td>
-         <app-tictactoe-square></app-tictactoe-square>
-        </td>
-        <td>
-         <app-tictactoe-square></app-tictactoe-square>
-        </td>
-     </tr>
 
-    <tr>
-        <td>
-         <app-tictactoe-square></app-tictactoe-square>
-        </td> 
-        <td>
-         <app-tictactoe-square></app-tictactoe-square>
-        </td>
-        <td>
-         <app-tictactoe-square></app-tictactoe-square>
-        </td>
-     </tr>
+<app-handtracker (onPrediction)="prediction($event)"></app-handtracker>
 
-    <tr>
-       <td>
-        <app-tictactoe-square></app-tictactoe-square>
-       </td> 
-       <td>
-        <app-tictactoe-square></app-tictactoe-square>
-       </td>
-       <td>
-        <app-tictactoe-square></app-tictactoe-square>
-       </td>
-    </tr>
 
-</table>
 
+
+
+<app-tictactoe-board></app-tictactoe-board>
+
+<div [innerHTML]="gesture"></div>
