@@ -41,4 +41,5 @@ the first custom gesture is to place an x or o, and this gesture is also made up
 the second custom gesture i added is to clear the board and is different from all the other gestures so you dont accidently do it
 
 8. How does your app implement or follow principles of good UI design?
-the app has all the needed information up front and updates as needed.
+the input data is immediate when opening. you always have the game and your camera in view, and when someone wins
+it tracks which player beat which at the bottom of the screen.
